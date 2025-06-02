@@ -1,0 +1,103 @@
+&physics_flags
+  adiabatic_option = 'field-line-average-term'
+  const_alpha_geo = .false.
+  full_flux_surface = .false.
+  include_parallel_streaming = .true.
+  include_mirror = .true.
+  include_apar = .false.
+  include_bpar = .false.
+  nonlinear = .true.
+/
+&species_knobs
+  nspec = 1
+/
+&species_parameters_1
+  dens = 1.0
+  fprim = 1.0
+  mass = 1.0
+  temp = 1.0
+  tprim = 3.0
+  type = 'ion'
+  z = 1.0
+/
+&parameters
+  rhostar = 0.025
+  zeff = 1.0
+  beta = 0.0
+  vnew_ref = 0.0
+  nine=1.0
+  tite=1.0
+/
+&vmec_parameters
+  nfield_periods = 8.519008682373702
+  torflux = 0.25
+  vmec_filename = '../wout_kjm30.nc'
+  alpha0 = 0.0
+/
+&kt_grids_box_parameters
+  nx = 108
+  ny = 128
+  x0 = 30
+  y0 = 20
+/
+&zgrid_parameters
+  boundary_option = 'periodic'
+  nperiod = 1
+  nzed = 72
+  shat_zero = 1e-06
+  zed_equal_arc = .true.
+/
+&vpamu_grids_parameters
+  nmu = 24
+  nvgrid = 36
+  vpa_max = 3.0
+/
+&knobs
+  lu_option = 'local'
+  delt = 0.1
+  mirror_semi_lagrange = .false.
+  nitt = 300
+  tend = 4000
+  time_upwind = 1.0
+  vpa_upwind = 0.02
+  zed_upwind = 0.02
+  stream_implicit = .false.
+  mirror_implicit = .false.
+  drifts_implicit = .false.
+  print_extra_info_to_terminal = .true.
+/
+&stella_diagnostics_knobs
+  nsave = 300
+  nwrite = 400
+  save_for_restart = .true.
+  write_fluxes_kxkyz = .true.
+  write_gvmus = .true.
+  write_gzvs = .true.
+  write_kspectra = .true.
+  write_omega = .true.
+  write_phi_vs_time = .true.
+/
+&init_g_knobs
+  ginit_option = 'noise'
+  restart_dir = 'nc' 
+  phiinit = 1.0e-3
+  width0 = 1.0
+/
+&dissipation
+  hyper_dissipation = .true.
+/
+&hyper
+  D_hyper = 12.0
+/
+&geo_knobs
+  geo_option = 'vmec'
+/
+&kt_grids_knobs
+  grid_option = 'box'
+/
+&time_advance_knobs
+  xdriftknob = 1.0
+  ydriftknob = 1.0
+  wstarknob = 1.0
+  explicit_option = 'rk3'
+/

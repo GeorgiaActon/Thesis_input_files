@@ -1,0 +1,6 @@
+Nonlinear input files for FA
+Here there are 2 different values of rhostar: 0.01 and 0.025
+For rhostar=0.025 there is the case of mirror+streaming being treated implicitly and explicitly. For the explicit case there are 2 different resolutions which agree with eachother. This has been done because there are currently memory issues with stella meaning the rhostar=0.01 case cannot be done at the higher resolutions. This case is done to show convergence in resolutions.
+For the rhostar=0.01 case, only the explicit algorithm is used
+
+W7X high mirror	configuration

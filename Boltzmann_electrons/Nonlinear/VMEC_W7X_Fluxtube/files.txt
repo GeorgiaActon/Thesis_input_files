@@ -1,0 +1,3 @@
+Nonlinear input files for FT
+W7X high mirror	configuration
+Different number of poloidal turns: 1, 1.5, 2, 2.5, 3, 4, 5 (and the number of Nz changes accordingly) 

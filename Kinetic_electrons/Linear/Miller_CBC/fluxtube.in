@@ -1,0 +1,111 @@
+&zgrid_parameters
+ nzed            = 32
+ ntubes          = 1
+ nperiod         = 3
+ boundary_option = "default"
+ zed_equal_arc   = .true.
+/
+&geo_knobs
+ geo_option = 'miller'
+/
+&physics_flags
+ full_flux_surface = .false.
+ const_alpha_geo   = .false.
+ nonlinear         = .false.
+ adiabatic_option  = "field-line-average-term"
+/
+&parameters
+ beta     = 0.0 
+ zeff     = 1.0
+ vnew_ref = 0.0	
+ rhostar  = 0.0
+/
+&vpamu_grids_parameters
+ nvgrid    = 36	
+ nmu       = 12
+ vpa_max   = 3.0
+ vperp_max = 3.0
+/
+&time_advance_knobs
+ explicit_option = "rk3" 
+/
+&kt_grids_knobs
+ grid_option = 'box'
+/
+&kt_grids_box_parameters
+ ny = 64
+ nx = 1
+ y0 = 25.0
+/
+&init_g_knobs
+ chop_side        = F
+ phiinit          = 1.0e-2
+ scale_to_phiinit = .true.
+ restart_dir      = "nc"
+ ginit_option     = "default"
+ width0           = 1.0
+/
+&knobs
+ zed_upwind      = 0.02
+ vpa_upwind      = 0.02
+ time_upwind     = 0.02
+ drifts_implicit = .false.
+ stream_implicit = .true.
+ mirror_implicit = .true.
+ delt            = 0.1
+! nstep           = 2000
+ tend = 100
+/
+&species_knobs
+ nspec          = 2
+ species_option = 'stella'
+/
+&species_parameters_1
+ z     = 1.0
+ mass  = 1.0
+ dens  = 1.0
+ temp  = 1.0
+ fprim = 0.8
+ tprim = 2.498
+ type  = "ion"
+/ 
+&species_parameters_2
+ z     = -1.0
+ mass  = 2.7e-4
+ dens  = 1.0
+ temp  = 1.0
+ fprim = 0.8
+ tprim = 2.498
+ type  = "electron"
+/ 
+&stella_diagnostics_knobs
+ nwrite            = 20
+ nsave             = 3000 
+ save_for_restart  = .false.
+ write_omega       = .true.
+/
+&reinit_knobs
+ delt_adj     = 2.0
+ delt_minimum = 1.e-6
+/
+&layouts_knobs
+ xyzs_layout = 'yxzs'
+ vms_layout  = 'vms' 
+/
+&millergeo_parameters
+  betadbprim = 0.0
+  betaprim = 0.0
+  d2psidr2 = 0.0
+  d2qdr2 = 0.0
+  kappa = 1.0
+  kapprim = 0.0
+  nzed_local = 128
+  qinp = 1.4
+  rgeo = 2.77778
+  rhoc = 0.5
+  rmaj = 2.77778
+  shat = 0.796
+  shift = 0.0
+  tri = 0.0
+  triprim = 0.0
+/

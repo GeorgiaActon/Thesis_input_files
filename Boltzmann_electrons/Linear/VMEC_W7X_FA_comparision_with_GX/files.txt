@@ -1,0 +1,5 @@
+Linear input files for FA
+Rho_star = 0.05
+W7X high mirror configuration
+Different ny's for rhostar=0.05: 12, 16, 24, 32, 48, 64, 96, 128, 160, 192, 224, 256
+Different ny's for rhostar=0.01: 32, 64, 128, 192, 256, 320, 384, 486, 576, 729, 864, 972
